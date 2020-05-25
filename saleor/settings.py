@@ -12,8 +12,12 @@ import sentry_sdk
 from django.core.exceptions import ImproperlyConfigured
 from django.core.management.utils import get_random_secret_key
 from django_prices.utils.formatting import get_currency_fraction
+from dotenv import load_dotenv
 from sentry_sdk.integrations.celery import CeleryIntegration
 from sentry_sdk.integrations.django import DjangoIntegration
+
+
+load_dotenv()
 
 
 def get_list(text):
