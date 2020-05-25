@@ -31,6 +31,7 @@ django-phonenumber-field==4.0.0
 django-prices==2.2.0
 django-prices-openexchangerates==1.1.0
 django-prices-vatlayer==1.1.0
+django-redis==4.11.0
 django-render-block==0.6
 django-storages==1.9.1
 django-templated-email==2.3.0
@@ -81,6 +82,7 @@ pycparser==2.20
 pyjwt==1.7.1
 pyphen==0.9.5
 python-dateutil==2.8.1
+python-dotenv==0.13.0
 python-magic==0.4.18
 python-magic-bin==0.4.14; sys_platform == "win32"
 pytz==2020.1

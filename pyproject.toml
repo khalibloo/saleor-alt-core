@@ -62,6 +62,7 @@ oauthlib = "^3.0"
 jaeger-client = "^4.3.0"
 django-cache-url = "^3.1.2"
 python-dotenv = "^0.13.0"
+django-redis = "^4.11.0"
 
 [tool.poetry.dev-dependencies]
 black = "19.10b0"
