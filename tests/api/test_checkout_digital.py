@@ -179,7 +179,7 @@ def test_checkout_complete(
     checkout.save(update_fields=["billing_address"])
 
     # Create a dummy payment to charge
-    total = calculations.checkout_total(checkout)
+    total = calculations.checkout_total(checkout=checkout, lines=list(checkout))
     payment = payment_dummy
     payment.is_active = True
     payment.order = None
@@ -209,7 +209,7 @@ def test_remove_shipping_method_if_only_digital_in_checkout(
     checkout.save()
 
     assert checkout.shipping_method
-    update_checkout_shipping_method_if_invalid(checkout, None)
+    update_checkout_shipping_method_if_invalid(checkout, list(checkout), None)
 
     checkout.refresh_from_db()
     assert not checkout.shipping_method
@@ -238,7 +238,7 @@ def test_checkout_lines_update_remove_shipping_if_removed_product_with_shipping(
     content = get_graphql_content(response)
 
     data = content["data"]["checkoutLinesUpdate"]
-    assert not data["errors"]
+    assert not data["checkoutErrors"]
     checkout.refresh_from_db()
     assert checkout.lines.count() == 1
     assert not checkout.shipping_method

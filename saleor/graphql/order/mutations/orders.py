@@ -238,7 +238,7 @@ class OrderUpdateShipping(BaseMutation):
         clean_order_update_shipping(order, method)
 
         order.shipping_method = method
-        order.shipping_price = info.context.extensions.calculate_order_shipping(order)
+        order.shipping_price = info.context.plugins.calculate_order_shipping(order)
         order.shipping_method_name = method.name
         order.save(
             update_fields=[
@@ -311,9 +311,6 @@ class OrderCancel(BaseMutation):
 
     class Arguments:
         id = graphene.ID(required=True, description="ID of the order to cancel.")
-        restock = graphene.Boolean(
-            required=True, description="Determine if lines will be restocked or not."
-        )
 
     class Meta:
         description = "Cancel an order."
@@ -322,10 +319,10 @@ class OrderCancel(BaseMutation):
         error_type_field = "order_errors"
 
     @classmethod
-    def perform_mutation(cls, _root, info, restock, **data):
+    def perform_mutation(cls, _root, info, **data):
         order = cls.get_node_or_error(info, data.get("id"), only_type=Order)
         clean_order_cancel(order)
-        cancel_order(order=order, user=info.context.user, restock=restock)
+        cancel_order(order=order, user=info.context.user)
         return OrderCancel(order=order)
 
 
