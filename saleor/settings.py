@@ -266,6 +266,8 @@ INSTALLED_APPS = [
     "django_countries",
     "django_filters",
     "phonenumber_field",
+    # Dev
+    "django_extensions",
 ]
 
 

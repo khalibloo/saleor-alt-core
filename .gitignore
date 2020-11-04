@@ -34,3 +34,7 @@ dist/
 
 # Exported results file
 django-queries-results.html
+
+# localhost https certs
+cert.crt
+cert.key
