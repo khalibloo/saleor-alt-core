@@ -6,14 +6,14 @@ appdirs==1.4.4
 asgiref==3.3.0
 astroid==2.4.2
 atomicwrites==1.4.0; sys_platform == "win32"
-attrs==20.2.0
+attrs==20.3.0
 babel==2.8.0
 beautifulsoup4==4.7.1
 beautifultable==0.7.0
 billiard==3.6.3.0
 black==19.10b0
-boto3==1.16.11
-botocore==1.19.11
+boto3==1.16.12
+botocore==1.19.12
 braintree==4.4.0
 cachetools==4.1.1
 cairocffi==1.2.0
@@ -61,7 +61,7 @@ draftjs-sanitizer==1.0.0
 enmerkar==0.7.1
 et-xmlfile==1.0.1
 execnet==1.7.1
-faker==4.14.1
+faker==4.14.2
 filelock==3.0.12
 flake8==3.8.4
 freezegun==0.3.15
@@ -108,6 +108,7 @@ maxminddb==2.0.3
 maxminddb-geolite2==2018.703
 mccabe==0.6.1
 measurement==3.2.0
+meilisearch==0.13.0
 mpmath==1.1.0
 multidict==5.0.0; python_version >= "3.6"
 mypy==0.740

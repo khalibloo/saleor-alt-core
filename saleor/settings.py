@@ -256,6 +256,7 @@ INSTALLED_APPS = [
     "saleor.webhook",
     "saleor.wishlist",
     "saleor.app",
+    "meilisearchplugin",
     # External apps
     "versatileimagefield",
     "django_measurement",
@@ -525,11 +526,15 @@ PLUGINS = [
     "saleor.payment.gateways.razorpay.plugin.RazorpayGatewayPlugin",
     "saleor.payment.gateways.adyen.plugin.AdyenGatewayPlugin",
     "saleor.plugins.invoicing.plugin.InvoicingPlugin",
+    # "saleor.plugins.meilisearch.plugin.MeiliSearchPlugin",
+    "meilisearchplugin.plugin.MeiliSearchPlugin",
 ]
 
 # Plugin discovery
 installed_plugins = pkg_resources.iter_entry_points("saleor.plugins")
 for entry_point in installed_plugins:
+    # print("entry point")
+    # print(entry_point.module_name)
     plugin_path = "{}.{}".format(entry_point.module_name, entry_point.attrs[0])
     if plugin_path not in PLUGINS:
         if entry_point.name not in INSTALLED_APPS:
