@@ -71,6 +71,7 @@ google-cloud-pubsub = ">=1.7,<3.0"
 uvicorn = {extras = ["standard"], version = "^0.12.2"}
 gunicorn = "^20.0.4"
 meilisearch = "^0.13.0"
+django-extensions = "^3.1.0"
 
 [tool.poetry.dev-dependencies]
 black = "19.10b0"
@@ -79,7 +80,6 @@ coverage = "^5.3"
 django-debug-toolbar = "^3.1"
 django-debug-toolbar-request-history = "^0"
 django-graphiql-debug-toolbar = "^0.1.4"
-django-extensions = "^3.0.9"
 flake8 = "^3.8.4"
 isort = "^4.3.21"
 pre-commit = "^2.7"
