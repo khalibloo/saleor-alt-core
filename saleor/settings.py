@@ -269,7 +269,7 @@ INSTALLED_APPS = [
     "phonenumber_field",
 ]
 
-if DEBUG:
+if get_bool_from_env("ENABLE_DJANGO_EXTENSIONS", False):
     INSTALLED_APPS.append("django_extensions")
 
 
