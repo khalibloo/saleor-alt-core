@@ -267,9 +267,10 @@ INSTALLED_APPS = [
     "django_countries",
     "django_filters",
     "phonenumber_field",
-    # Dev
-    "django_extensions",
 ]
+
+if DEBUG:
+    INSTALLED_APPS.append("django_extensions")
 
 
 ENABLE_DEBUG_TOOLBAR = get_bool_from_env("ENABLE_DEBUG_TOOLBAR", False)
